@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b2lnd714o582o"]
+
+[ext_resource type="Shader" uid="uid://c8oioeahp0vmd" path="res://1 Basics/4 Vertex/vertex.tres" id="1_782wm"]
+[ext_resource type="Texture2D" uid="uid://cqmj0wwwhqw4b" path="res://icon.svg" id="1_spyoy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uxd2w"]
+shader = ExtResource("1_782wm")
+
+[node name="Vertex" type="Node2D" unique_id=331116496]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=594936678]
+material = SubResource("ShaderMaterial_uxd2w")
+position = Vector2(100, 100)
+texture = ExtResource("1_spyoy")
+
+[node name="Camera2D" type="Camera2D" parent="Icon" unique_id=921176590]
+zoom = Vector2(5, 5)

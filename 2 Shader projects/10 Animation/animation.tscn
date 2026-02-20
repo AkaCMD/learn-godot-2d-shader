@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlcxpj8xs2r6c"]
+
+[ext_resource type="Texture2D" uid="uid://oewfx3m2bu6e" path="res://2 Shader projects/10 Animation/attack.png" id="1_qth1f"]
+
+[node name="Animation" type="Control"]
+clip_children = 1
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 96.0
+offset_bottom = 96.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_qth1f")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(48, 48)
+zoom = Vector2(5, 5)

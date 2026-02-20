@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0pvl8qu27q5n"]
+
+[ext_resource type="Shader" uid="uid://cn1cghu1iwux1" path="res://3 Trigonometry/2 Orbit/orbit.gdshader" id="1_0l0y2"]
+[ext_resource type="Texture2D" uid="uid://cqmj0wwwhqw4b" path="res://icon.svg" id="2_auyyp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oivpa"]
+shader = ExtResource("1_0l0y2")
+
+[node name="Orbit" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_oivpa")
+texture = ExtResource("2_auyyp")
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+zoom = Vector2(5, 5)

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://culahx8inny6b"]
+
+[ext_resource type="Shader" uid="uid://bbgrtmioxeuui" path="res://1 Basics/3 textures/textures.tres" id="1_mqvc5"]
+[ext_resource type="Texture2D" uid="uid://cqmj0wwwhqw4b" path="res://icon.svg" id="1_tooow"]
+[ext_resource type="Texture2D" uid="uid://b8lphcghqj78q" path="res://1 Basics/3 textures/checkerboard.jpg" id="3_mqvc5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rro27"]
+shader = ExtResource("1_mqvc5")
+
+[node name="Textures" type="Node2D" unique_id=1679111845]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1932310653]
+material = SubResource("ShaderMaterial_rro27")
+position = Vector2(100, 100)
+texture = ExtResource("1_tooow")
+
+[node name="Camera2D" type="Camera2D" parent="Icon" unique_id=377324631]
+zoom = Vector2(5, 5)
+
+[node name="Checkerboard" type="Sprite2D" parent="." unique_id=86889077]
+position = Vector2(135, -504)
+texture = ExtResource("3_mqvc5")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmwlrp3v4mdbn"]
+
+[ext_resource type="Texture2D" uid="uid://cqmj0wwwhqw4b" path="res://icon.svg" id="1_7gt8j"]
+[ext_resource type="Shader" uid="uid://dtd1mjs3885t2" path="res://3 Trigonometry/4 Reload/reload.gdshader" id="2_hc70u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7gt8j"]
+shader = ExtResource("2_hc70u")
+
+[node name="Reload" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_7gt8j")
+texture = ExtResource("1_7gt8j")
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+zoom = Vector2(5, 5)

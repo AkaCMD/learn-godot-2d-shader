@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://nbwhafo5yyg2"]
+
+[ext_resource type="Texture2D" uid="uid://cqmj0wwwhqw4b" path="res://icon.svg" id="1_jaxo5"]
+[ext_resource type="Shader" uid="uid://cwlpdiid3dbhc" path="res://2 Shader projects/1 Crosshair/Crosshair.gdshader" id="1_l3j00"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fx0ky"]
+shader = ExtResource("1_l3j00")
+shader_parameter/center_size = 0.6000000285
+shader_parameter/circle_width = 0.02800000133
+shader_parameter/circle_distance = 0.2570000122075
+shader_parameter/interval_width = 0.1
+shader_parameter/crosshair_length = 0.32800001558
+shader_parameter/crosshair_height = 0.414000019665
+shader_parameter/crosshair_distance = 0.38000001805
+
+[node name="Crosshair" type="Node2D" unique_id=888345518]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1499282754]
+material = SubResource("ShaderMaterial_fx0ky")
+texture = ExtResource("1_jaxo5")
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=758700023]
+zoom = Vector2(5, 5)

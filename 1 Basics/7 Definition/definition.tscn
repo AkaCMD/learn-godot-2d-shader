@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://jsxqluepdc2h"]
+
+[ext_resource type="Texture2D" uid="uid://cqmj0wwwhqw4b" path="res://icon.svg" id="1_52ano"]
+[ext_resource type="Shader" uid="uid://bbsiyxp5c42hy" path="res://1 Basics/7 Definition/definition.gdshader" id="1_xg3up"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0f0ap"]
+shader = ExtResource("1_xg3up")
+shader_parameter/progress = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xg3up"]
+shader = ExtResource("1_xg3up")
+shader_parameter/progress = 0.5000000074506
+
+[node name="Definition" type="Node2D" unique_id=1127743794]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=309183655]
+material = SubResource("ShaderMaterial_0f0ap")
+position = Vector2(181, 100)
+texture = ExtResource("1_52ano")
+
+[node name="Camera2D" type="Camera2D" parent="Icon" unique_id=1072985204]
+zoom = Vector2(5, 5)
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1072187936]
+material = SubResource("ShaderMaterial_xg3up")
+texture = ExtResource("1_52ano")
+polygon = PackedVector2Array(-5, 0.5, 129, -0.5, 129, 28.5, 129, 49.5, 130, 72.5, 130, 91.5, 130, 110.5, 130, 123.5, -5, 126.5, -6, 108.5, -8, 83.5, -8, 64.5, -10, 46.5, -10, 27.5)
+uv = PackedVector2Array(-5, 0.5, 129, -0.5, 129, 28.5, 129, 49.5, 130, 72.5, 130, 91.5, 130, 110.5, 130, 123.5, -5, 126.5, -6, 108.5, -8, 83.5, -8, 64.5, -10, 46.5, -10, 27.5)

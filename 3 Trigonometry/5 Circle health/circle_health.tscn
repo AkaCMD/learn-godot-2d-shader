@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpvsbnm4ym75v"]
+
+[ext_resource type="Shader" uid="uid://20nm0nroi0cn" path="res://3 Trigonometry/5 Circle health/circle_health.gdshader" id="1_jgxi4"]
+[ext_resource type="Texture2D" uid="uid://cqmj0wwwhqw4b" path="res://icon.svg" id="2_c37pm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t8yip"]
+shader = ExtResource("1_jgxi4")
+
+[node name="CircleHealth" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_t8yip")
+texture = ExtResource("2_c37pm")
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+zoom = Vector2(5, 5)

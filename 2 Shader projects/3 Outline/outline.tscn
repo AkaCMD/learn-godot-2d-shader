@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://7gi1acoe3cfp"]
+
+[ext_resource type="Texture2D" uid="uid://dgs1jxpqvpvoa" path="res://2 Shader projects/3 Outline/bird.png" id="1_1mkxl"]
+[ext_resource type="Shader" uid="uid://coi813nevfuyj" path="res://2 Shader projects/3 Outline/outline.gdshader" id="1_myle8"]
+[ext_resource type="Texture2D" uid="uid://cqmj0wwwhqw4b" path="res://icon.svg" id="3_t3ucj"]
+
+[sub_resource type="GDScript" id="GDScript_1mkxl"]
+script/source = "extends Node2D
+
+func _ready() -> void:
+	$Sprite2D.texture = add_padding_to_texture($Sprite2D.texture, 5)
+
+
+func add_padding_to_texture(original_texture: Texture2D, padding: int) -> ImageTexture:
+	var original_image = original_texture.get_image()
+	if original_image.is_compressed():
+		original_image.decompress()
+	
+	if original_image.get_format() != Image.FORMAT_RGBA8:
+		original_image.convert(Image.FORMAT_RGBA8)
+		
+	var new_width = original_image.get_width() + padding * 2
+	var new_height = original_image.get_height() + padding * 2
+	var padded_image = Image.create(new_width, new_height, false, Image.FORMAT_RGBA8)
+	padded_image.fill(Color(0,0,0,0))
+	padded_image.blit_rect(
+		original_image,
+		Rect2(0,0,original_image.get_width(), original_image.get_height()),
+		Vector2(padding, padding)
+		)
+	return ImageTexture.create_from_image(padded_image)
+
+
+func _on_h_slider_value_changed(value: float) -> void:
+	$Sprite2D.material.set_shader_parameter('line_thickness', value / 100)
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t3ucj"]
+shader = ExtResource("1_myle8")
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/line_thickness = 0.50000002375
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myle8"]
+atlas = ExtResource("1_1mkxl")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3ucj"]
+atlas = ExtResource("1_1mkxl")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yss13"]
+atlas = ExtResource("1_1mkxl")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eceyw"]
+atlas = ExtResource("1_1mkxl")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q1i1o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myle8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3ucj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yss13")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eceyw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yss13"]
+shader = ExtResource("1_myle8")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_thickness = 0.5
+
+[node name="Outline" type="Node2D" unique_id=1601959833]
+script = SubResource("GDScript_1mkxl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=882289829]
+texture_filter = 1
+material = SubResource("ShaderMaterial_t3ucj")
+sprite_frames = SubResource("SpriteFrames_q1i1o")
+autoplay = "default"
+
+[node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D" unique_id=103000595]
+zoom = Vector2(5, 5)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=400405541]
+material = SubResource("ShaderMaterial_yss13")
+texture = ExtResource("3_t3ucj")
+
+[node name="HSlider" type="HSlider" parent="." unique_id=847581769]
+offset_left = -70.0
+offset_top = 76.0
+offset_right = 70.0
+offset_bottom = 92.0
+
+[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]

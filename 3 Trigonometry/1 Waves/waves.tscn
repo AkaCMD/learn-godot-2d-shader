@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bypt6f6k2ixt0"]
+
+[ext_resource type="Shader" uid="uid://covnd5rc78l7c" path="res://3 Trigonometry/1 Waves/waves.gdshader" id="1_23l3u"]
+[ext_resource type="Texture2D" uid="uid://cqmj0wwwhqw4b" path="res://icon.svg" id="2_xn5hp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_03m5t"]
+shader = ExtResource("1_23l3u")
+
+[node name="Waves" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_03m5t")
+texture = ExtResource("2_xn5hp")
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+zoom = Vector2(5, 5)

@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://bv5t4hnfmctf1"]
+
+[ext_resource type="Texture2D" uid="uid://cqmj0wwwhqw4b" path="res://icon.svg" id="1_ewj6t"]
+[ext_resource type="Shader" uid="uid://5mja7h4ju0hf" path="res://2 Shader projects/11 Transition/transition.gdshader" id="1_h4gep"]
+[ext_resource type="Script" uid="uid://bgmr7u11uidlp" path="res://2 Shader projects/11 Transition/transition.gd" id="1_udllo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_udllo"]
+shader = ExtResource("1_h4gep")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c3bts"]
+shader = ExtResource("1_h4gep")
+
+[node name="Transition" type="Node2D"]
+script = ExtResource("1_udllo")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_udllo")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_c3bts")
+position = Vector2(960, 540)
+scale = Vector2(6, 1)
+texture = ExtResource("1_ewj6t")

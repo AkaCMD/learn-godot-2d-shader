@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cu1pbclr5es6l"]
+
+[ext_resource type="Shader" uid="uid://4m3nfodutabw" path="res://2 Shader projects/4 UV Control/uv_control.gdshader" id="1_i30eh"]
+[ext_resource type="Texture2D" uid="uid://cqmj0wwwhqw4b" path="res://icon.svg" id="1_j0p52"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y3e6n"]
+shader = ExtResource("1_i30eh")
+shader_parameter/x = 0.0
+
+[node name="UVControl" type="Node2D" unique_id=326431814]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=492644669]
+material = SubResource("ShaderMaterial_y3e6n")
+texture = ExtResource("1_j0p52")
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=187790991]
+zoom = Vector2(5, 5)

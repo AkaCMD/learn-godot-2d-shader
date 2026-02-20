@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgjm1nl3ivicb"]
+
+[ext_resource type="Texture2D" uid="uid://cqmj0wwwhqw4b" path="res://icon.svg" id="1_6621t"]
+
+[node name="Dissolve" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6621t")
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+zoom = Vector2(5, 5)

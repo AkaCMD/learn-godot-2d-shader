@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://phqxv8lvjdfr"]
+
+[ext_resource type="Texture2D" uid="uid://cqmj0wwwhqw4b" path="res://icon.svg" id="1_5f6iq"]
+[ext_resource type="Shader" uid="uid://dqlsdrd38qtfb" path="res://3 Trigonometry/6 Liquid/liquid.gdshader" id="1_v7oeg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v7oeg"]
+shader = ExtResource("1_v7oeg")
+
+[node name="Liquid" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_v7oeg")
+texture = ExtResource("1_5f6iq")
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+zoom = Vector2(5, 5)

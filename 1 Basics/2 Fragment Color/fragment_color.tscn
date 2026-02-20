@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://xayw8srt27gg"]
+
+[ext_resource type="Shader" uid="uid://b1yf5qchk77ou" path="res://1 Basics/2 Fragment Color/fragment_color.tres" id="1_e3a6s"]
+[ext_resource type="Texture2D" uid="uid://cqmj0wwwhqw4b" path="res://icon.svg" id="1_qdc57"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qdwxy"]
+shader = ExtResource("1_e3a6s")
+
+[node name="FragmentColor" type="Node2D" unique_id=1307017114]
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1276087568]
+material = SubResource("ShaderMaterial_qdwxy")
+position = Vector2(100, 100)
+texture = ExtResource("1_qdc57")
+
+[node name="Camera2D" type="Camera2D" parent="Icon" unique_id=932396002]
+zoom = Vector2(5, 5)

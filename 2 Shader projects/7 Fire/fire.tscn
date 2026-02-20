@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnkbutopnet7p"]
+
+[ext_resource type="Texture2D" uid="uid://cqmj0wwwhqw4b" path="res://icon.svg" id="1_4c6xi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_db270"]
+
+[node name="Fire" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_db270")
+texture = ExtResource("1_4c6xi")
+
+[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+zoom = Vector2(5, 5)
