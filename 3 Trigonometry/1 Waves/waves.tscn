@@ -1,16 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://bypt6f6k2ixt0"]
+[gd_scene format=3 uid="uid://bypt6f6k2ixt0"]
 
 [ext_resource type="Shader" uid="uid://covnd5rc78l7c" path="res://3 Trigonometry/1 Waves/waves.gdshader" id="1_23l3u"]
 [ext_resource type="Texture2D" uid="uid://cqmj0wwwhqw4b" path="res://icon.svg" id="2_xn5hp"]
 
+[sub_resource type="Curve" id="Curve_23l3u"]
+_data = [Vector2(0.07537689, 0.17883056), 0.0, 0.0, 0, 0, Vector2(0.28140703, 0.6532223), 0.0, 0.0, 0, 0, Vector2(0.7236181, 0), 2.2834136, 2.2834136, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_xn5hp"]
+curve = SubResource("Curve_23l3u")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_03m5t"]
 shader = ExtResource("1_23l3u")
+shader_parameter/scale_curve = SubResource("CurveTexture_xn5hp")
+shader_parameter/speed = 0.50000002375
 
-[node name="Waves" type="Node2D"]
+[node name="Waves" type="Node2D" unique_id=1104622757]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2059357189]
 material = SubResource("ShaderMaterial_03m5t")
 texture = ExtResource("2_xn5hp")
 
-[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+[node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=1914347973]
 zoom = Vector2(5, 5)

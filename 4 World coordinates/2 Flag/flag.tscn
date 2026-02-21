@@ -1,18 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpte1edrlnqfv"]
+[gd_scene format=3 uid="uid://dpte1edrlnqfv"]
 
 [ext_resource type="Shader" uid="uid://cleauvfyhrkki" path="res://4 World coordinates/2 Flag/flag.gdshader" id="1_6qrrs"]
 [ext_resource type="Texture2D" uid="uid://cqmj0wwwhqw4b" path="res://icon.svg" id="2_du47s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6qrrs"]
 shader = ExtResource("1_6qrrs")
+shader_parameter/speed = 2.0
+shader_parameter/frequency_y = 2.0
+shader_parameter/amplitude_y = 14.0
+shader_parameter/frequency_x = 4.0
+shader_parameter/amplitude_x = 8.0
+shader_parameter/incline = 0.5570000264575
+shader_parameter/max_incline = 40.0
 
-[node name="Flag" type="Node2D"]
+[node name="Flag" type="Node2D" unique_id=1411310105]
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1124290785]
 material = SubResource("ShaderMaterial_6qrrs")
 texture = ExtResource("2_du47s")
 polygon = PackedVector2Array(-4.909088, -7.800049, 13.255356, -7.800049, 21.070297, -7.800049, 39, -9, 63.735626, -9.489765, 82.7449, -9.489765, 106.18973, -17.515913, 119.07379, -9.489765, 131.32425, -1.4636154, 135.33731, 19.65783, 137.44946, 43.736282, 135.75974, 67.3923, 138.71674, 92.1044, 134.28125, 115.76042, 130.69061, 136.45943, 104.5, 142.79587, 84.43463, 135.40337, 61.834686, 147.02016, 40.713226, 139.62766, 15.789932, 143.21829, -6.810013, 127.37721, -4.486664, 97.17354, -21.172607, 64.646515, -4.909088, 21.981194, -6, 10)
 uv = PackedVector2Array(-4.909088, -7.800049, 13.255356, -7.800049, 21.070297, -7.800049, 48.950592, -9.489765, 63.735626, -9.489765, 82.7449, -9.489765, 106.18973, -17.515913, 119.07379, -9.489765, 131.32425, -1.4636154, 135.33731, 19.65783, 137.44946, 43.736282, 135.75974, 67.3923, 138.71674, 92.1044, 134.28125, 115.76042, 130.69061, 136.45943, 104.5, 142.79587, 84.43463, 135.40337, 61.834686, 147.02016, 40.713226, 139.62766, 15.789932, 143.21829, -6.810013, 127.37721, -4.486664, 97.17354, -21.172607, 64.646515, -4.909088, 21.981194, -5.965164, -10.123405)
 
-[node name="Camera2D" type="Camera2D" parent="Polygon2D"]
+[node name="Camera2D" type="Camera2D" parent="Polygon2D" unique_id=608510503]
 zoom = Vector2(5, 5)

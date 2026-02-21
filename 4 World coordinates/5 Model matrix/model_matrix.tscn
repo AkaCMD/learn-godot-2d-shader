@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dg0xstnqrl870"]
+[gd_scene format=3 uid="uid://dg0xstnqrl870"]
 
 [ext_resource type="Shader" uid="uid://drlnek57yv3ab" path="res://4 World coordinates/5 Model matrix/model_matrix.gdshader" id="1_qfg16"]
 [ext_resource type="Texture2D" uid="uid://cqmj0wwwhqw4b" path="res://icon.svg" id="2_gnw5k"]
@@ -145,19 +145,19 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="ModelMatrix" type="Node2D"]
+[node name="ModelMatrix" type="Node2D" unique_id=968298626]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=484746635]
 material = SubResource("ShaderMaterial_nu1uq")
-position = Vector2(285, 334)
+position = Vector2(37, -24)
 texture = ExtResource("2_gnw5k")
 
-[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+[node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=1487102874]
 position = Vector2(72, -192)
 scale = Vector2(4, 4)
 zoom = Vector2(3, 3)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1738720602]
 visible = false
 texture_filter = 1
 material = SubResource("ShaderMaterial_sntvy")

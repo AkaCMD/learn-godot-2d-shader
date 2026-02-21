@@ -1,16 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0pvl8qu27q5n"]
+[gd_scene format=3 uid="uid://b0pvl8qu27q5n"]
 
 [ext_resource type="Shader" uid="uid://cn1cghu1iwux1" path="res://3 Trigonometry/2 Orbit/orbit.gdshader" id="1_0l0y2"]
 [ext_resource type="Texture2D" uid="uid://cqmj0wwwhqw4b" path="res://icon.svg" id="2_auyyp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oivpa"]
 shader = ExtResource("1_0l0y2")
+shader_parameter/earth_radius = 0.1
+shader_parameter/moon_radius = 0.05
+shader_parameter/meteor_radius = 0.05
+shader_parameter/earth_color = Color(0, 0.64705884, 0.83137256, 1)
+shader_parameter/moon_color = Color(0.91881675, 0.91881675, 0.9188166, 1)
+shader_parameter/meteor_color = Color(0, 0, 0, 1)
+shader_parameter/moon_distance = 0.398000018905
+shader_parameter/meteor_distance = 0.4
 
-[node name="Orbit" type="Node2D"]
+[node name="Orbit" type="Node2D" unique_id=1724646524]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1544908202]
 material = SubResource("ShaderMaterial_oivpa")
 texture = ExtResource("2_auyyp")
 
-[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+[node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=1921134408]
 zoom = Vector2(5, 5)

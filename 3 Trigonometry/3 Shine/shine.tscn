@@ -1,16 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcvq3vk0qcvd5"]
+[gd_scene format=3 uid="uid://dcvq3vk0qcvd5"]
 
 [ext_resource type="Texture2D" uid="uid://cqmj0wwwhqw4b" path="res://icon.svg" id="1_12d54"]
 [ext_resource type="Shader" uid="uid://d2ul4r8ggio63" path="res://3 Trigonometry/3 Shine/shine.gdshader" id="1_sma4g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4ftb0"]
 shader = ExtResource("1_sma4g")
+shader_parameter/angle = -0.7
+shader_parameter/thickness = 0.2
+shader_parameter/center = Vector2(0.17, 1)
 
-[node name="Shine" type="Node2D"]
+[node name="Shine" type="Node2D" unique_id=533424371]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1299351121]
 material = SubResource("ShaderMaterial_4ftb0")
 texture = ExtResource("1_12d54")
 
-[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+[node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=1347816174]
 zoom = Vector2(5, 5)

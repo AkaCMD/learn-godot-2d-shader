@@ -6,6 +6,18 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_goxkj"]
 shader = ExtResource("1_mlqrg")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mlqrg"]
+shader = ExtResource("1_mlqrg")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mlqrg"]
+size = Vector2(128, -128)
+subdivide_width = 100
+subdivide_depth = 100
+orientation = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wfpbl"]
+shader = ExtResource("1_mlqrg")
+
 [node name="Vertex" type="Node2D" unique_id=1785570559]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1372313385]
@@ -14,3 +26,18 @@ texture = ExtResource("1_jh4u5")
 
 [node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=1309470267]
 zoom = Vector2(5, 5)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=907243994]
+visible = false
+material = SubResource("ShaderMaterial_mlqrg")
+position = Vector2(162, -1)
+mesh = SubResource("PlaneMesh_mlqrg")
+texture = ExtResource("1_jh4u5")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=669524151]
+visible = false
+material = SubResource("ShaderMaterial_wfpbl")
+position = Vector2(-196, -76)
+texture = ExtResource("1_jh4u5")
+polygon = PackedVector2Array(37.959503, 15.953644, 31.197662, 19.71022, 23.308868, 28.725998, 14.668732, 45.25492, 12.414795, 63.286476, 15.420074, 84.69895, 18.800964, 104.23313, 38.335175, 112.4976, 61.625916, 114.75153, 93.18115, 112.87325, 105.57782, 103.48182, 112.33966, 88.45553, 112.33966, 73.053566, 112.71533, 60.656876, 114.96927, 43.376633, 113.466644, 32.10691, 101.82126, 22.715477, 89.42456, 18.207588, 74.02261, 14.826675, 60.49893, 14.826675, 45.848297, 14.826675)
+uv = PackedVector2Array(37.959503, 15.953644, 31.197662, 19.71022, 23.308868, 28.725998, 14.668732, 45.25492, 12.414795, 63.286476, 15.420074, 84.69895, 18.800964, 104.23313, 38.335175, 112.4976, 61.625916, 114.75153, 93.18115, 112.87325, 105.57782, 103.48182, 112.33966, 88.45553, 112.33966, 73.053566, 112.71533, 60.656876, 114.96927, 43.376633, 113.466644, 32.10691, 101.82126, 22.715477, 89.42456, 18.207588, 74.02261, 14.826675, 60.49893, 14.826675, 45.848297, 14.826675)

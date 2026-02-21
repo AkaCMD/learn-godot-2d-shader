@@ -1,16 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://cttu2kx557ava"]
+[gd_scene format=3 uid="uid://cttu2kx557ava"]
 
 [ext_resource type="Texture2D" uid="uid://cqmj0wwwhqw4b" path="res://icon.svg" id="1_gfhkr"]
 [ext_resource type="Shader" uid="uid://dj4lfhysgx6h6" path="res://4 World coordinates/4 Fake 3D/fake_3d.gdshader" id="1_ykjf1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bhims"]
 shader = ExtResource("1_ykjf1")
+shader_parameter/rot_x = 0.0
+shader_parameter/rot_y = 0.1090000051775
+shader_parameter/rot_z = 0.0
+shader_parameter/pivot = Vector2(64, 0)
 
-[node name="Fake3D" type="Node2D"]
+[node name="Fake3D" type="Node2D" unique_id=903694310]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=588583017]
 material = SubResource("ShaderMaterial_bhims")
 texture = ExtResource("1_gfhkr")
 
-[node name="Camera2D" type="Camera2D" parent="Sprite2D"]
+[node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=159501885]
 zoom = Vector2(5, 5)
