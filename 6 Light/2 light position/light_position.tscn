@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://104fx7f8ooc8"]
+[gd_scene format=3 uid="uid://104fx7f8ooc8"]
 
 [ext_resource type="Shader" uid="uid://c601vxf6n6fjv" path="res://6 Light/2 light position/light_position.gdshader" id="1_e6l6h"]
 [ext_resource type="Texture2D" uid="uid://cqmj0wwwhqw4b" path="res://icon.svg" id="2_18x04"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kdga1"]
 shader = ExtResource("1_e6l6h")
+shader_parameter/progress = 2.7270001295325
+shader_parameter/width = 0.826000039235
+shader_parameter/cell_size = 24.41
+shader_parameter/gap = 10.0
+shader_parameter/radius = 8.44
 
 [sub_resource type="Gradient" id="Gradient_mcnyr"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -14,18 +19,18 @@ gradient = SubResource("Gradient_mcnyr")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
-[node name="LightPosition" type="Node2D"]
+[node name="LightPosition" type="Node2D" unique_id=833428829]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1352782155]
 material = SubResource("ShaderMaterial_kdga1")
 texture = ExtResource("2_18x04")
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(6, 3)
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=271048607]
+position = Vector2(1, -5)
 color = Color(1, 0, 0, 1)
 energy = 2.0
 texture = SubResource("GradientTexture2D_7u6nh")
 texture_scale = 3.0
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2136312121]
 zoom = Vector2(5, 5)

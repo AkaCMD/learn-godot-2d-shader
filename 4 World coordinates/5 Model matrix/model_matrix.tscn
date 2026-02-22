@@ -2,13 +2,24 @@
 
 [ext_resource type="Shader" uid="uid://drlnek57yv3ab" path="res://4 World coordinates/5 Model matrix/model_matrix.gdshader" id="1_qfg16"]
 [ext_resource type="Texture2D" uid="uid://cqmj0wwwhqw4b" path="res://icon.svg" id="2_gnw5k"]
+[ext_resource type="Texture2D" uid="uid://chgwgecnfynfg" path="res://4 World coordinates/5 Model matrix/space.jpg" id="2_nu1uq"]
 [ext_resource type="Texture2D" uid="uid://dbuq43cf7l2cn" path="res://4 World coordinates/5 Model matrix/character.png" id="3_gnw5k"]
+[ext_resource type="Texture2D" uid="uid://bjs87ir4bovh6" path="res://4 World coordinates/5 Model matrix/ground.png" id="4_d2nrd"]
+[ext_resource type="Script" uid="uid://dbnuop46132ds" path="res://4 World coordinates/5 Model matrix/animated_sprite_2d.gd" id="6_65n1d"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nu1uq"]
 shader = ExtResource("1_qfg16")
+shader_parameter/radius = 65.1630030952425
+shader_parameter/circle_center = Vector2(100, 150)
+shader_parameter/space_texture = ExtResource("2_nu1uq")
+shader_parameter/amount = 0.6510000309225
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sntvy"]
 shader = ExtResource("1_qfg16")
+shader_parameter/radius = 0.0
+shader_parameter/circle_center = Vector2(100, 150)
+shader_parameter/space_texture = ExtResource("2_nu1uq")
+shader_parameter/amount = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nu1uq"]
 atlas = ExtResource("3_gnw5k")
@@ -147,21 +158,29 @@ animations = [{
 
 [node name="ModelMatrix" type="Node2D" unique_id=968298626]
 
+[node name="Space" type="Sprite2D" parent="." unique_id=1731821067]
+visible = false
+position = Vector2(347, 88)
+texture = ExtResource("2_nu1uq")
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=484746635]
+visible = false
 material = SubResource("ShaderMaterial_nu1uq")
-position = Vector2(37, -24)
+position = Vector2(361, 202)
 texture = ExtResource("2_gnw5k")
 
-[node name="Camera2D" type="Camera2D" parent="Sprite2D" unique_id=1487102874]
-position = Vector2(72, -192)
-scale = Vector2(4, 4)
-zoom = Vector2(3, 3)
+[node name="Ground" type="Sprite2D" parent="." unique_id=556033408]
+position = Vector2(952, 704)
+texture = ExtResource("4_d2nrd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1738720602]
-visible = false
 texture_filter = 1
 material = SubResource("ShaderMaterial_sntvy")
-position = Vector2(357, 142)
+position = Vector2(354, 302)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_xlrcd")
 animation = &"up"
+script = ExtResource("6_65n1d")
+
+[node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D" unique_id=1487102874]
+zoom = Vector2(3, 3)

@@ -1,19 +1,22 @@
-[gd_scene load_steps=8 format=3 uid="uid://cestpbpjiqgr2"]
+[gd_scene format=3 uid="uid://cestpbpjiqgr2"]
 
-[ext_resource type="Shader" uid="uid://c6n7in6g65ecr" path="res://5 Canvas coordinates/6 SubViewport/sub_viewport_inner.gdshader" id="1_in7jq"]
+[ext_resource type="Shader" uid="uid://bid1r2qiwfppk" path="res://5 Canvas coordinates/6 SubViewport/sub_viewport_inner.gdshader" id="1_in7jq"]
 [ext_resource type="Texture2D" uid="uid://cqmj0wwwhqw4b" path="res://icon.svg" id="2_dvh2i"]
-[ext_resource type="Shader" uid="uid://co0elbew1r3qc" path="res://5 Canvas coordinates/6 SubViewport/sub_viewport_outer.gdshader" id="3_dvh2i"]
+[ext_resource type="Shader" uid="uid://cyykaaw3xcryh" path="res://5 Canvas coordinates/6 SubViewport/sub_viewport_outer.gdshader" id="3_dvh2i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fufq0"]
 shader = ExtResource("1_in7jq")
-shader_parameter/scale = 0.774000036765
-shader_parameter/speed = 0.2570000122075
+shader_parameter/scale = 0.0
+shader_parameter/speed = 0.2330000110675
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dvh2i"]
 shader = ExtResource("3_dvh2i")
-shader_parameter/line_count = 5.70000022325
-shader_parameter/line_width = 0.49600002356
-shader_parameter/speed = 0.14800000703
+shader_parameter/line_count = 7.102000337345
+shader_parameter/line_width = 0.5
+shader_parameter/speed = 0.56800002698
+shader_parameter/wobbling_speed = 0.5
+shader_parameter/wave_amplitude = 10.0
+shader_parameter/pixel_size = 64.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_fufq0"]
 size = Vector2(256, -256)
@@ -23,23 +26,23 @@ subdivide_depth = 100
 [sub_resource type="ViewportTexture" id="ViewportTexture_ih8gw"]
 viewport_path = NodePath("SubViewport")
 
-[node name="SubViewport" type="Node2D"]
+[node name="SubViewport" type="Node2D" unique_id=1813081506]
 
-[node name="SubViewport" type="SubViewport" parent="."]
+[node name="SubViewport" type="SubViewport" parent="." unique_id=539916289]
 transparent_bg = true
 size = Vector2i(256, 256)
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewport"]
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport" unique_id=1268228258]
 material = SubResource("ShaderMaterial_fufq0")
 position = Vector2(64, 64)
 texture = ExtResource("2_dvh2i")
 
-[node name="Sprite2D2" type="Sprite2D" parent="SubViewport"]
+[node name="Sprite2D2" type="Sprite2D" parent="SubViewport" unique_id=654186215]
 position = Vector2(128, 128)
 texture = ExtResource("2_dvh2i")
 centered = false
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=655685884]
 material = SubResource("ShaderMaterial_dvh2i")
 mesh = SubResource("QuadMesh_fufq0")
 texture = SubResource("ViewportTexture_ih8gw")
